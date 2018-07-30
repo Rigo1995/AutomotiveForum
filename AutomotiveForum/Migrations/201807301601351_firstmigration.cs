@@ -3,20 +3,26 @@ namespace AutomotiveForum.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class testmigration : DbMigration
+    public partial class firstmigration : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Fora",
+                "dbo.Customers",
                 c => new
                     {
-                        CommentId = c.Int(nullable: false, identity: true),
-                        Timestamp = c.DateTime(nullable: false),
-                        Comment = c.String(),
+                        Id = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        StreetAdress = c.String(),
+                        State = c.String(),
+                        Email = c.String(),
+                        ZipCode = c.Int(nullable: false),
+                        DateOfBirth = c.Int(nullable: false),
+                        Date = c.DateTime(nullable: false),
                         UserId = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.CommentId)
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
@@ -80,6 +86,19 @@ namespace AutomotiveForum.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.Fora",
+                c => new
+                    {
+                        CommentId = c.Int(nullable: false, identity: true),
+                        Timestamp = c.DateTime(nullable: false),
+                        Comment = c.String(),
+                        UserId = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.CommentId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
+                .Index(t => t.UserId);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -95,22 +114,25 @@ namespace AutomotiveForum.Migrations
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Fora", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Customers", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Fora", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Fora", new[] { "UserId" });
+            DropIndex("dbo.Customers", new[] { "UserId" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Fora");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.Fora");
+            DropTable("dbo.Customers");
         }
     }
 }

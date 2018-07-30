@@ -79,6 +79,17 @@ namespace AutomotiveForum.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (User.IsInRole("Admin"))
+                    {
+                        return RedirectToRoute("Index", "Customer");
+                    }
+                    else
+                    {
+                        if (User.IsInRole("Customer"))
+                        {
+                            return RedirectToAction("Index", "Forum");
+                        }
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -163,7 +174,12 @@ namespace AutomotiveForum.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
 
-                    return RedirectToAction("Index", "Home");
+
+                    if(ModelState.IsValid)
+                    {
+
+                    }
+                    return RedirectToAction("Create", "Customers");
                 }
                 AddErrors(result);
             }

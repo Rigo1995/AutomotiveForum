@@ -31,6 +31,8 @@ namespace AutomotiveForum
                 role.Name = "Customer";
                 roleManager.Create(role);
             }
+
+
         }
 
     }
