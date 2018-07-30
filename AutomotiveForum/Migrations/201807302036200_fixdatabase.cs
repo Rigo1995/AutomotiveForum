@@ -3,7 +3,7 @@ namespace AutomotiveForum.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class firstmigration : DbMigration
+    public partial class fixdatabase : DbMigration
     {
         public override void Up()
         {
@@ -32,6 +32,11 @@ namespace AutomotiveForum.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         UserRole = c.String(),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        StreetAdress = c.String(),
+                        State = c.String(),
+                        ZipCode = c.Int(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
