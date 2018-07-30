@@ -31,5 +31,13 @@ namespace AutomotiveForum.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AutomotiveForum.Models.Forum> Fora { get; set; }
+
+        public System.Data.Entity.DbSet<AutomotiveForum.Models.Customers> Customers { get; set; }
+
+        //remember to reset applicationUser to "User" asp doesn't recognize ApplicationUser as a correct path to table.
+
+       // public System.Data.Entity.DbSet<AutomotiveForum.Models.ApplicationUser> ApplicationUsers { get; set; }       
     }
 }
