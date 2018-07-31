@@ -7,13 +7,13 @@ namespace AutomotiveForum.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class fixdatabase : IMigrationMetadata
+    public sealed partial class testmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fixdatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(testmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807302036200_fixdatabase"; }
+            get { return "201807311509427_test migration"; }
         }
         
         string IMigrationMetadata.Source
