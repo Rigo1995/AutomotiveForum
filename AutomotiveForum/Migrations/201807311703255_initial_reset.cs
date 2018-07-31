@@ -3,7 +3,7 @@ namespace AutomotiveForum.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class testmigration : DbMigration
+    public partial class initial_reset : DbMigration
     {
         public override void Up()
         {
@@ -94,12 +94,12 @@ namespace AutomotiveForum.Migrations
                 "dbo.Fora",
                 c => new
                     {
-                        CommentId = c.Int(nullable: false, identity: true),
+                        TopicId = c.Int(nullable: false, identity: true),
                         Timestamp = c.DateTime(nullable: false),
-                        Comment = c.String(),
+                        Topic = c.String(),
                         UserId = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.CommentId)
+                .PrimaryKey(t => t.TopicId)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             

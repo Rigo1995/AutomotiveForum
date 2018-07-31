@@ -7,7 +7,7 @@
 <h2>Discussion Board</h2>
 
 <p>
-    @Html.ActionLink("Start New Article", "Create")
+    @Html.ActionLink("Create New Article", "Create")
 </p>
 <table class="table">
     <tr>
@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Timestamp)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comment)
+            @Html.DisplayNameFor(model => model.Topic)
         </th>
         <th></th>
     </tr>
@@ -35,12 +35,12 @@
             @Html.DisplayFor(modelItem => item.Timestamp)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Comment)
+            @Html.DisplayFor(modelItem => item.Topic)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CommentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CommentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CommentId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.TopicId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TopicId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TopicId })
         </td>
     </tr>
 }

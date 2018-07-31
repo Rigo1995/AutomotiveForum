@@ -7,13 +7,12 @@ using System.Web;
 
 namespace AutomotiveForum.Models
 {
-    public class Forum
+    public class Comments
     {
         [Key]
-        public int TopicId { get; set; }
+        public int CommentId { get; set; }
         public DateTime Timestamp { get; set; }
-        public string Topic { get; set; }
-        public string Details { get; set; }
+        public string Comment { get; set; }
 
         [ForeignKey("User")]
         public string UserId { get; set; }

@@ -10,112 +10,112 @@ using AutomotiveForum.Models;
 
 namespace AutomotiveForum.Controllers
 {
-    public class ForumController : Controller
+    public class CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Forum
+        // GET: Comments
         public ActionResult Index()
         {
-            var fora = db.Fora.Include(f => f.User);
-            return View(fora.ToList());
+            var comments = db.Comments.Include(c => c.User);
+            return View(comments.ToList());
         }
 
-        // GET: Forum/Details/5
+        // GET: Comments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Forum forum = db.Fora.Find(id);
-            if (forum == null)
+            Comments comments = db.Comments.Find(id);
+            if (comments == null)
             {
                 return HttpNotFound();
             }
-            return View(forum);
+            return View(comments);
         }
 
-        // GET: Forum/Create
+        // GET: Comments/Create
         public ActionResult Create()
         {
             ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole");
             return View();
         }
 
-        // POST: Forum/Create
+        // POST: Comments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TopicId,Timestamp,Topic,UserId")] Forum forum)
+        public ActionResult Create([Bind(Include = "CommentId,Timestamp,Comment,UserId")] Comments comments)
         {
             if (ModelState.IsValid)
             {
-                db.Fora.Add(forum);
+                db.Comments.Add(comments);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole", forum.UserId);
-            return View(forum);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole", comments.UserId);
+            return View(comments);
         }
 
-        // GET: Forum/Edit/5
+        // GET: Comments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Forum forum = db.Fora.Find(id);
-            if (forum == null)
+            Comments comments = db.Comments.Find(id);
+            if (comments == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole", forum.UserId);
-            return View(forum);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole", comments.UserId);
+            return View(comments);
         }
 
-        // POST: Forum/Edit/5
+        // POST: Comments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TopicId,Timestamp,Topic,UserId")] Forum forum)
+        public ActionResult Edit([Bind(Include = "CommentId,Timestamp,Comment,UserId")] Comments comments)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(forum).State = EntityState.Modified;
+                db.Entry(comments).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole", forum.UserId);
-            return View(forum);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserRole", comments.UserId);
+            return View(comments);
         }
 
-        // GET: Forum/Delete/5
+        // GET: Comments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Forum forum = db.Fora.Find(id);
-            if (forum == null)
+            Comments comments = db.Comments.Find(id);
+            if (comments == null)
             {
                 return HttpNotFound();
             }
-            return View(forum);
+            return View(comments);
         }
 
-        // POST: Forum/Delete/5
+        // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Forum forum = db.Fora.Find(id);
-            db.Fora.Remove(forum);
+            Comments comments = db.Comments.Find(id);
+            db.Comments.Remove(comments);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

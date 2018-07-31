@@ -209,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -216,12 +217,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807311509427_test migration.cs" />
-    <Compile Include="Migrations\201807311509427_test migration.Designer.cs">
-      <DependentUpon>201807311509427_test migration.cs</DependentUpon>
+    <Compile Include="Migrations\201807311703255_initial_reset.cs" />
+    <Compile Include="Migrations\201807311703255_initial_reset.Designer.cs">
+      <DependentUpon>201807311703255_initial_reset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807311828464_created_comment_model_and_controller.cs" />
+    <Compile Include="Migrations\201807311828464_created_comment_model_and_controller.Designer.cs">
+      <DependentUpon>201807311828464_created_comment_model_and_controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807311846445_created_comment_model_and_controller1.cs" />
+    <Compile Include="Migrations\201807311846445_created_comment_model_and_controller1.Designer.cs">
+      <DependentUpon>201807311846445_created_comment_model_and_controller1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Comments.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -296,6 +306,11 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,8 +325,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807311509427_test migration.resx">
-      <DependentUpon>201807311509427_test migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807311703255_initial_reset.resx">
+      <DependentUpon>201807311703255_initial_reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807311828464_created_comment_model_and_controller.resx">
+      <DependentUpon>201807311828464_created_comment_model_and_controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807311846445_created_comment_model_and_controller1.resx">
+      <DependentUpon>201807311846445_created_comment_model_and_controller1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
