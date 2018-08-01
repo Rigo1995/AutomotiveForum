@@ -18,11 +18,8 @@
             @Html.DisplayNameFor(model => model.User.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Timestamp)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Topic)
-        </th>
+        </th>      
         <th></th>
     </tr>
 
@@ -38,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Topic)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TopicId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TopicId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TopicId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.TopicId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TopicId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TopicId })
         </td>
     </tr>
 }

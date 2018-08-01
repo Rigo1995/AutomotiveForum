@@ -11,7 +11,7 @@ namespace AutomotiveForum.Models
     {
         [Key]
         public int CommentId { get; set; }
-        public DateTime Timestamp { get; set; }
+        public DateTime? Timestamp { get; set; }
         public string Comment { get; set; }
 
         [ForeignKey("User")]

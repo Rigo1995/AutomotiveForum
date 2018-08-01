@@ -217,17 +217,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807311703255_initial_reset.cs" />
-    <Compile Include="Migrations\201807311703255_initial_reset.Designer.cs">
-      <DependentUpon>201807311703255_initial_reset.cs</DependentUpon>
+    <Compile Include="Migrations\201808011904585_initial_migration.cs" />
+    <Compile Include="Migrations\201808011904585_initial_migration.Designer.cs">
+      <DependentUpon>201808011904585_initial_migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807311828464_created_comment_model_and_controller.cs" />
-    <Compile Include="Migrations\201807311828464_created_comment_model_and_controller.Designer.cs">
-      <DependentUpon>201807311828464_created_comment_model_and_controller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807311846445_created_comment_model_and_controller1.cs" />
-    <Compile Include="Migrations\201807311846445_created_comment_model_and_controller1.Designer.cs">
-      <DependentUpon>201807311846445_created_comment_model_and_controller1.cs</DependentUpon>
+    <Compile Include="Migrations\201808011908343_removed details.cs" />
+    <Compile Include="Migrations\201808011908343_removed details.Designer.cs">
+      <DependentUpon>201808011908343_removed details.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -246,6 +242,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\WRX.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -325,14 +322,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807311703255_initial_reset.resx">
-      <DependentUpon>201807311703255_initial_reset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808011904585_initial_migration.resx">
+      <DependentUpon>201808011904585_initial_migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807311828464_created_comment_model_and_controller.resx">
-      <DependentUpon>201807311828464_created_comment_model_and_controller.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807311846445_created_comment_model_and_controller1.resx">
-      <DependentUpon>201807311846445_created_comment_model_and_controller1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808011908343_removed details.resx">
+      <DependentUpon>201808011908343_removed details.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

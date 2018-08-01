@@ -3,16 +3,16 @@ namespace AutomotiveForum.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class created_comment_model_and_controller1 : DbMigration
+    public partial class removeddetails : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Fora", "Details", c => c.String());
+            DropColumn("dbo.Fora", "Details");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Fora", "Details");
+            AddColumn("dbo.Fora", "Details", c => c.String());
         }
     }
 }
