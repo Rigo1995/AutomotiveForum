@@ -56,6 +56,10 @@ namespace AutomotiveForum.Models
 
         public System.Data.Entity.DbSet<AutomotiveForum.Models.Comments> Comments { get; set; }
 
+        public System.Data.Entity.DbSet<AutomotiveForum.Models.MarketPlace> MarketPlaces { get; set; }
+
+        //public System.Data.Entity.DbSet<AutomotiveForum.Models.ApplicationUser> ApplicationUsers { get; set; }
+
         //public System.Data.Entity.DbSet<AutomotiveForum.Models.ApplicationUser> ApplicationUsers { get; set; }
 
         //remember to reset applicationUser to "User" asp doesn't recognize ApplicationUser as a correct path to table.
