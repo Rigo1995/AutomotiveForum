@@ -13,6 +13,7 @@ namespace AutomotiveForum.Models
         public int TopicId { get; set; }
         public DateTime Date { get { return DateTime.Now; } }
         public string Topic { get; set; }
+        public int PostLike { get; set; }
 
 
         [ForeignKey("User")]

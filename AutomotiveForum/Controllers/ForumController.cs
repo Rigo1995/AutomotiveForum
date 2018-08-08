@@ -52,6 +52,7 @@ namespace AutomotiveForum.Controllers
         {
             if (ModelState.IsValid)
             {
+                forum.PostLike = 0;
                 db.Fora.Add(forum);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201808081619278_price.Designer.cs">
       <DependentUpon>201808081619278_price.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808081830276_post like.cs" />
+    <Compile Include="Migrations\201808081830276_post like.Designer.cs">
+      <DependentUpon>201808081830276_post like.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808081619278_price.resx">
       <DependentUpon>201808081619278_price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808081830276_post like.resx">
+      <DependentUpon>201808081830276_post like.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
