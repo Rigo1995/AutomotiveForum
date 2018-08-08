@@ -11,10 +11,11 @@ namespace AutomotiveForum.Models
     {
         [Key]
         public int Id { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get { return DateTime.Now; } }
         public string ItemsForSale { get; set; }
-        public int Price{ get; set; }
         public string Description { get; set; }
+        [DataType(DataType.Currency)]
+        public decimal Price { get; set; }
 
         [ForeignKey("User")]
         public string UserId { get; set; }

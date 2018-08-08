@@ -10,8 +10,9 @@ namespace AutomotiveForum.Models
     public class CarBuildOfTheMonth
     {
         [Key]
-        public int Name { get; set; }
-        public DateTime? Date { get; set; }
+        public string FistName { get; set; }
+        public string LastName { get; set; }
+        public DateTime Date { get { return DateTime.Now; } }
         public string Entry { get; set; }
 
         [ForeignKey("User")]

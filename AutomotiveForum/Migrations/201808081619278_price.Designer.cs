@@ -7,13 +7,13 @@ namespace AutomotiveForum.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class removeddetails : IMigrationMetadata
+    public sealed partial class price : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(removeddetails));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(price));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808011908343_removed details"; }
+            get { return "201808081619278_price"; }
         }
         
         string IMigrationMetadata.Source

@@ -18,7 +18,7 @@ namespace AutomotiveForum.Models
         public string Email { get; set; }
         public int ZipCode { get; set; }
         public int DateOfBirth { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get { return DateTime.Now; } }
 
         [ForeignKey("User")]
         public string UserId { get; set; }

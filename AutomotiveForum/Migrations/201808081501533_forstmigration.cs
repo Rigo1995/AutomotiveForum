@@ -3,7 +3,7 @@ namespace AutomotiveForum.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial_migration : DbMigration
+    public partial class forstmigration : DbMigration
     {
         public override void Up()
         {
@@ -12,16 +12,13 @@ namespace AutomotiveForum.Migrations
                 c => new
                     {
                         CommentId = c.Int(nullable: false, identity: true),
-                        Timestamp = c.DateTime(),
+                        TopicId = c.Int(nullable: false),
                         Comment = c.String(),
                         UserId = c.String(maxLength: 128),
-                        Forum_TopicId = c.Int(),
                     })
                 .PrimaryKey(t => t.CommentId)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
-                .ForeignKey("dbo.Fora", t => t.Forum_TopicId)
-                .Index(t => t.UserId)
-                .Index(t => t.Forum_TopicId);
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -99,7 +96,6 @@ namespace AutomotiveForum.Migrations
                         Email = c.String(),
                         ZipCode = c.Int(nullable: false),
                         DateOfBirth = c.Int(nullable: false),
-                        Date = c.DateTime(),
                         UserId = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
@@ -111,12 +107,24 @@ namespace AutomotiveForum.Migrations
                 c => new
                     {
                         TopicId = c.Int(nullable: false, identity: true),
-                        Timestamp = c.DateTime(),
                         Topic = c.String(),
-                        Details = c.String(),
                         UserId = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.TopicId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.MarketPlaces",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ItemsForSale = c.String(),
+                        Price = c.Int(nullable: false),
+                        Description = c.String(),
+                        UserId = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
@@ -135,14 +143,15 @@ namespace AutomotiveForum.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.MarketPlaces", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Fora", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Comments", "Forum_TopicId", "dbo.Fora");
             DropForeignKey("dbo.Customers", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Comments", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.MarketPlaces", new[] { "UserId" });
             DropIndex("dbo.Fora", new[] { "UserId" });
             DropIndex("dbo.Customers", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
@@ -150,9 +159,9 @@ namespace AutomotiveForum.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Comments", new[] { "Forum_TopicId" });
             DropIndex("dbo.Comments", new[] { "UserId" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.MarketPlaces");
             DropTable("dbo.Fora");
             DropTable("dbo.Customers");
             DropTable("dbo.AspNetUserRoles");

@@ -3,16 +3,16 @@ namespace AutomotiveForum.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class removeddetails : DbMigration
+    public partial class addedpricevalue : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.Fora", "Details");
+            AlterColumn("dbo.MarketPlaces", "Price", c => c.Double(nullable: false));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Fora", "Details", c => c.String());
+            AlterColumn("dbo.MarketPlaces", "Price", c => c.Int(nullable: false));
         }
     }
 }

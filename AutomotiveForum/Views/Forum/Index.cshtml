@@ -12,25 +12,20 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.User.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.LastName)
+            @Html.DisplayNameFor(model => model.User)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Topic)
-        </th>      
+        </th>
         <th></th>
     </tr>
-    
-@foreach (var item in Model) {
+
+    @foreach (var item in Model)
+    {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.UserRole)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Timestamp)
-        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
         <td>
             @Html.DisplayFor(modelItem => item.Topic)
         </td>
@@ -38,9 +33,9 @@
             @Html.ActionLink("Edit", "Edit", new { id = item.TopicId }) |
             @Html.ActionLink("Details", "Details", new { id = item.TopicId }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.TopicId })
-          
+
         </td>
     </tr>
-}
+    }
 
 </table>

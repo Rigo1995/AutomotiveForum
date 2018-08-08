@@ -218,37 +218,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808011904585_initial_migration.cs" />
-    <Compile Include="Migrations\201808011904585_initial_migration.Designer.cs">
-      <DependentUpon>201808011904585_initial_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201808081501533_forstmigration.cs" />
+    <Compile Include="Migrations\201808081501533_forstmigration.Designer.cs">
+      <DependentUpon>201808081501533_forstmigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808011908343_removed details.cs" />
-    <Compile Include="Migrations\201808011908343_removed details.Designer.cs">
-      <DependentUpon>201808011908343_removed details.cs</DependentUpon>
+    <Compile Include="Migrations\201808081557315_added pricevalue.cs" />
+    <Compile Include="Migrations\201808081557315_added pricevalue.Designer.cs">
+      <DependentUpon>201808081557315_added pricevalue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808020730591_added admin.cs" />
-    <Compile Include="Migrations\201808020730591_added admin.Designer.cs">
-      <DependentUpon>201808020730591_added admin.cs</DependentUpon>
+    <Compile Include="Migrations\201808081613226_cost.cs" />
+    <Compile Include="Migrations\201808081613226_cost.Designer.cs">
+      <DependentUpon>201808081613226_cost.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808021307375_marketplacemvc.cs" />
-    <Compile Include="Migrations\201808021307375_marketplacemvc.Designer.cs">
-      <DependentUpon>201808021307375_marketplacemvc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808021326586_corrected errors.cs" />
-    <Compile Include="Migrations\201808021326586_corrected errors.Designer.cs">
-      <DependentUpon>201808021326586_corrected errors.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808021333283_updated marketplace.cs" />
-    <Compile Include="Migrations\201808021333283_updated marketplace.Designer.cs">
-      <DependentUpon>201808021333283_updated marketplace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808021349461_updates market place again and corrected time stamp.cs" />
-    <Compile Include="Migrations\201808021349461_updates market place again and corrected time stamp.Designer.cs">
-      <DependentUpon>201808021349461_updates market place again and corrected time stamp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808021452332_added build of the month.cs" />
-    <Compile Include="Migrations\201808021452332_added build of the month.Designer.cs">
-      <DependentUpon>201808021452332_added build of the month.cs</DependentUpon>
+    <Compile Include="Migrations\201808081619278_price.cs" />
+    <Compile Include="Migrations\201808081619278_price.Designer.cs">
+      <DependentUpon>201808081619278_price.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -355,29 +339,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808011904585_initial_migration.resx">
-      <DependentUpon>201808011904585_initial_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808081501533_forstmigration.resx">
+      <DependentUpon>201808081501533_forstmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808011908343_removed details.resx">
-      <DependentUpon>201808011908343_removed details.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808081557315_added pricevalue.resx">
+      <DependentUpon>201808081557315_added pricevalue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808020730591_added admin.resx">
-      <DependentUpon>201808020730591_added admin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808081613226_cost.resx">
+      <DependentUpon>201808081613226_cost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021307375_marketplacemvc.resx">
-      <DependentUpon>201808021307375_marketplacemvc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021326586_corrected errors.resx">
-      <DependentUpon>201808021326586_corrected errors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021333283_updated marketplace.resx">
-      <DependentUpon>201808021333283_updated marketplace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021349461_updates market place again and corrected time stamp.resx">
-      <DependentUpon>201808021349461_updates market place again and corrected time stamp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021452332_added build of the month.resx">
-      <DependentUpon>201808021452332_added build of the month.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808081619278_price.resx">
+      <DependentUpon>201808081619278_price.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
