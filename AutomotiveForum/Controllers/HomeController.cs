@@ -10,8 +10,11 @@ namespace AutomotiveForum.Controllers
     {
         public ActionResult Index()
         {
+            Session["Test"] = "go free";
             return View();
         }
+
+
 
         public ActionResult About()
         {

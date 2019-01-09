@@ -50,6 +50,7 @@ namespace AutomotiveForum.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetAdress,State,Email,ZipCode,DateOfBirth,Date,UserId")] Customers customers)
         {
+            Session["CustomerInfo"] = customers;
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customers);

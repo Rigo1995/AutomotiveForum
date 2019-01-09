@@ -211,32 +211,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketPlacesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808081501533_forstmigration.cs" />
-    <Compile Include="Migrations\201808081501533_forstmigration.Designer.cs">
-      <DependentUpon>201808081501533_forstmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808081557315_added pricevalue.cs" />
-    <Compile Include="Migrations\201808081557315_added pricevalue.Designer.cs">
-      <DependentUpon>201808081557315_added pricevalue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808081613226_cost.cs" />
-    <Compile Include="Migrations\201808081613226_cost.Designer.cs">
-      <DependentUpon>201808081613226_cost.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808081619278_price.cs" />
-    <Compile Include="Migrations\201808081619278_price.Designer.cs">
-      <DependentUpon>201808081619278_price.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808081830276_post like.cs" />
-    <Compile Include="Migrations\201808081830276_post like.Designer.cs">
-      <DependentUpon>201808081830276_post like.cs</DependentUpon>
+    <Compile Include="Migrations\201901090550246_first migration.cs" />
+    <Compile Include="Migrations\201901090550246_first migration.Designer.cs">
+      <DependentUpon>201901090550246_first migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -244,7 +227,6 @@
     <Compile Include="Models\CarBuildOfTheMonth.cs" />
     <Compile Include="Models\Comments.cs" />
     <Compile Include="Models\Customers.cs" />
-    <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MarketPlace.cs" />
@@ -252,18 +234,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-theme.min.css.map.css" />
+    <Content Include="Content\LuxTheme.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Stbootstrap-theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Image\WRX.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -309,11 +296,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Forum\Create.cshtml" />
-    <Content Include="Views\Forum\Delete.cshtml" />
-    <Content Include="Views\Forum\Details.cshtml" />
-    <Content Include="Views\Forum\Edit.cshtml" />
-    <Content Include="Views\Forum\Index.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Delete.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
@@ -343,20 +325,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808081501533_forstmigration.resx">
-      <DependentUpon>201808081501533_forstmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808081557315_added pricevalue.resx">
-      <DependentUpon>201808081557315_added pricevalue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808081613226_cost.resx">
-      <DependentUpon>201808081613226_cost.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808081619278_price.resx">
-      <DependentUpon>201808081619278_price.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808081830276_post like.resx">
-      <DependentUpon>201808081830276_post like.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901090550246_first migration.resx">
+      <DependentUpon>201901090550246_first migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

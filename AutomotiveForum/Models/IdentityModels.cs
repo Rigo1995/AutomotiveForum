@@ -51,7 +51,6 @@ namespace AutomotiveForum.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<AutomotiveForum.Models.Forum> Fora { get; set; }
 
         public System.Data.Entity.DbSet<AutomotiveForum.Models.Customers> Customers { get; set; }
 

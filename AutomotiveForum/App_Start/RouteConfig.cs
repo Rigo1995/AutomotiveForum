@@ -12,7 +12,7 @@ namespace AutomotiveForum
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+           // routes.MapRoute("Text/action","Test/Action/{index}", new { Controller = "test", action = "action", index = UrlParameter.Equals });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
